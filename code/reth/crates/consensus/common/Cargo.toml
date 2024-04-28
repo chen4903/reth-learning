@@ -1,0 +1,25 @@
+[package]
+name = "reth-consensus-common"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+homepage.workspace = true
+repository.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+# reth
+reth-primitives.workspace = true
+reth-interfaces.workspace = true
+reth-provider.workspace = true
+
+[dev-dependencies]
+reth-interfaces = { workspace = true, features = ["test-utils"] }
+reth-provider = { workspace = true, features = ["test-utils"] }
+mockall = "0.12"
+
+[features]
+optimism = ["reth-primitives/optimism"]
